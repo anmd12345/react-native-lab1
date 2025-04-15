@@ -1,10 +1,9 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import MyButton from './mybutton';
 
 export default function Project2() {
   return (
-    <View style={styles.container}>
-      <Text>Project 2: Hello World!</Text>
-    </View>
+    <MyButton style={styles.container} onPress={() => alert('Hello World!')} title={'Click Me!'}/>
   );
 }
 

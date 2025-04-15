@@ -1,17 +1,9 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView, Text, StyleSheet } from 'react-native';
 
-export default function Project2() {
+export default function Project6() {
   return (
-    <View style={styles.container}>
-      <Text>Project 2: Hello World!</Text>
-    </View>
+    <ScrollView>
+      {[...Array(100).keys()].map((_, i) => (<Text key={i} style={{ fontSize: 20, margin: 10 }}>Hello World {i}</Text>))}
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

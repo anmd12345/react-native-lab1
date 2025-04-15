@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Project2() {
-  return (
-    <View style={styles.container}>
-      <Text>Project 2: Hello World!</Text>
-    </View>
-  );
+export default () => {
+  return (<View style={styles.container}>
+    <Square text="1" />
+    <Square text="2" />
+    <Square text="3" />
+  </View>);
 }
 
 const styles = StyleSheet.create({
@@ -14,4 +14,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  box: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'blue',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10,
+  },
+  text_white:{
+    color: 'white',
+    fontSize: 24,
+    fontWeight: 'bold'
+  }
 });
+
+const Square = ({ text }: { text: string }) => (
+  <View style={styles.box}>
+    <Text style={styles.text_white}>{text}</Text>
+  </View>
+);

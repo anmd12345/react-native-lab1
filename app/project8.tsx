@@ -1,10 +1,20 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
 
-export default function Project2() {
+const data = Array.from({ length: 100 }, (_, i) => ({ key: i, name: `Item ${i + 1}` }));
+
+
+export default function Project8() {
+
   return (
-    <View style={styles.container}>
-      <Text>Project 2: Hello World!</Text>
-    </View>
+    <FlatList
+      data={data}
+      renderItem={({ item }) => (
+        <View style={styles.container}>
+          <Text>{item.name}</Text>
+        </View>
+      )}
+      keyExtractor={item => item.key.toString()}
+    />
   );
 }
 
