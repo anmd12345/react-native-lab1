@@ -1,6 +1,5 @@
 import React from 'react';
-import { useColorScheme } from 'react-native';
-import { View, Text, TouchableOpacity, StyleSheet, Pressable } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
 
 
@@ -20,9 +19,9 @@ export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       {menuItems.map((item, index) => (
-        <View key={index} style={styles.menuItem}>
+        <View key={item.label} style={styles.menuItem}>
           <TouchableOpacity>
-            <Link key={index} href={item.screen as any}>
+            <Link key={item.label} href={item.screen as any}>
               <Text style={styles.menuText}>{item.label}</Text>
             </Link>
           </TouchableOpacity>
